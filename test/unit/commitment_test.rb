@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EmployeeCommitmentTest < ActiveSupport::TestCase
+class CommitmentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -11,6 +11,21 @@
     </div>
   <% end %>
 
+  <%= f.label :name, "Project Name:" %>
+  <%= f.text_field :name %>
+
+<p>who do you want working on this?</p>
+  <%= f.fields_for :commitments do |c| %>
+    <%= c.label :description %>
+    <%= c.text_field :description %>
+    <%= c.label :employee_id, "Employee:" %>
+    <%= c.select :employee_id, Employee.all.collect{|e| [e.first_name, e.id]}%>
+    <%= c.label :duration_in_weeks, "How long they gonna work for?" %>
+    <%= c.number_field :duration_in_weeks %>
+    <%= c.label :hours, "How long they gonna work for?" %>
+    <%= c.number_field :hours %>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

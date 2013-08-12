@@ -25,7 +25,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new.json
   def new
     @project = Project.new
-
+    @project.commitments << Commitment.new
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @project }
@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
-
+    debugger
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }

@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<%= @employee.first_name + " " + @employee.last_name %><br>
+<h3>Your Projects:</h3><br>
+<% @employee.commitments.each do |commitment| %>
+	<p>Project: <%= commitment.project.name %> </p>
+	<p>Weeks: <%= commitment.duration_in_weeks %> </p>
+	<p>Hours: <%= commitment.hours %> </p>
+<% end %>
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+<%= link_to 'Back', employees_path -%>

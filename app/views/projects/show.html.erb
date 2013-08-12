@@ -1,5 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<h3><%=@project.name%></h3>
+
+<ul>
+	<%@project.commitments.each do |commitment|%>
+		<li> 
+			<%=commitment.employee.first_name%> - <%=commitment.description%> - Weeks: <%=commitment.duration_in_weeks%> - Total Hours: <%=commitment.hours%>
+		</li>
+	<%end%>
+</ul>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

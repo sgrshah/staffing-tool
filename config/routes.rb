@@ -1,5 +1,5 @@
 StaffingTool::Application.routes.draw do
-  resources :employee_commitments
+  resources :commitments
 
 
   resources :projects
